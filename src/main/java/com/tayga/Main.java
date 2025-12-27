@@ -17,8 +17,8 @@ public class Main extends Application {
         xSize = bounds.getWidth();
         ySize = bounds.getHeight();
 
-        PaginaPrincipala pagina = new PaginaPrincipala();
-        pagina.start(stage);
+        Pages.init(stage);   // ✅ initialize scenes and navigation
+        stage.show();        // ✅ show once
     }
 
     public static void main(String[] args) {

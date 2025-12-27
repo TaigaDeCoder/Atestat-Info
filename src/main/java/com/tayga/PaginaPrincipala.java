@@ -1,51 +1,52 @@
 package com.tayga;
 
-import javafx.scene.Scene;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import javafx.scene.text.*;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class PaginaPrincipala {
 
-    public static void start(Stage stage) {
+    public static Parent create() {
 
+
+        Pane background = new Pane();
+        background.setStyle("-fx-background-color: green;");
+
+        // title
+        Text title = new Text("Pagina Principala");
+        title.setFont(new Font("Arial", 20));
+        StackPane.setMargin(title, new Insets(10));
+
+        StackPane titleBox = new StackPane(background, title);
+        titleBox.setAlignment(Pos.CENTER);
+
+        // left panel
+        Pane textBox = new Pane();
+        textBox.setPrefWidth(500);
+        textBox.setStyle("-fx-background-color: red;");
+
+        // button
         Button buttonBubble = new Button("Bubble");
-        buttonBubble.setLayoutX(100);
-        buttonBubble.setLayoutY(160);
         buttonBubble.setPrefSize(300, 100);
 
-        Bubble pagina = new Bubble();
+        BorderPane.setAlignment(buttonBubble, Pos.CENTER_RIGHT);
+        BorderPane.setMargin(buttonBubble, new Insets(20));
 
+        // navigation (here will come a HBox with all of the buttons)
         buttonBubble.setOnAction(e ->
-            Bubble.start(stage)
+                Pages.show(Pages.BUBBLE)
         );
 
+        // root
+        BorderPane root = new BorderPane();
+        root.setTop(titleBox);
+        root.setLeft(textBox);
+        root.setBottom(buttonBubble);
 
-        Text exText = new Text("Pagina Principala");
-        exText.setLayoutX(100);
-        exText.setLayoutY(150);
-
-        StackPane root = new StackPane();
-
-        Pane style = new Pane();
-        style.prefWidthProperty().bind(root.widthProperty());
-        style.prefHeightProperty().bind(root.heightProperty());
-        style.setStyle("-fx-background-color: Green");
-
-        Pane layout = new Pane();
-        layout.getChildren().add(buttonBubble);
-        layout.getChildren().add(exText);
-
-
-        root.getChildren().addAll(style, layout); //be VERY careful of in what order you put the diffrent panes
-
-        Scene scene = new Scene(root, Main.xSize, Main.ySize);
-
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        return root;
     }
 }
