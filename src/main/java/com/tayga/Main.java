@@ -1,3 +1,5 @@
+package com.tayga;
+
 import javafx.application.Application;
 import javafx.stage.Screen;
 import javafx.stage.Stage;

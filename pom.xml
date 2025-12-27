@@ -19,18 +19,17 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
+            <version>21</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
+            <version>21</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-
             <!-- Java compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -48,7 +47,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <!-- MUST be fully qualified -->
-                    <mainClass>Main</mainClass>
+                    <mainClass>com.tayga.Main</mainClass>
                 </configuration>
             </plugin>
 
