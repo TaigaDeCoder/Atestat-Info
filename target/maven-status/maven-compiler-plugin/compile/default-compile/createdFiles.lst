@@ -1,4 +1,10 @@
+com\tayga\Merge.class
+com\tayga\Cycle.class
+com\tayga\Heap.class
 com\tayga\PaginaPrincipala.class
+com\tayga\Insertion.class
+com\tayga\Quick.class
 com\tayga\Main.class
 com\tayga\Pages.class
+com\tayga\Selection.class
 com\tayga\Bubble.class

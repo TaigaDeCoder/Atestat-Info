@@ -29,23 +29,71 @@ public class PaginaPrincipala {
         textBox.setPrefWidth(500);
         textBox.setStyle("-fx-background-color: red;");
 
-        // button
-        Button buttonBubble = new Button("Bubble");
-        buttonBubble.setPrefSize(300, 100);
+        // buttons
 
-        BorderPane.setAlignment(buttonBubble, Pos.CENTER_RIGHT);
-        BorderPane.setMargin(buttonBubble, new Insets(20));
+        HBox buttons = new HBox();
+        buttons.setAlignment(Pos.CENTER);
+
+        buttons.setSpacing(10);
+
+        Button buttonBubble = new Button("Bubble");
+        buttonBubble.setPrefSize(100, 30);
+
+        Button buttonCycle = new Button("Cycle");
+        buttonCycle.setPrefSize(100, 30);
+
+        Button buttonHeap = new Button("Heap");
+        buttonHeap.setPrefSize(100, 30);
+
+        Button buttonInsertion = new Button("Insertion");
+        buttonInsertion.setPrefSize(100, 30);
+
+        Button buttonMerge= new Button("Merge");
+        buttonMerge.setPrefSize(100, 30);
+
+        Button buttonQuick = new Button("Quick");
+        buttonQuick.setPrefSize(100, 30);
+
+        Button buttonSelection = new Button("Selection");
+        buttonSelection.setPrefSize(100, 30);
+
+
+        buttons.getChildren().add(buttonBubble);
 
         // navigation (here will come a HBox with all of the buttons)
         buttonBubble.setOnAction(e ->
                 Pages.show(Pages.BUBBLE)
         );
 
+        buttonCycle.setOnAction(e ->
+                Pages.show(Pages.CYCLE)
+        );
+
+        buttonHeap.setOnAction(e ->
+                Pages.show(Pages.HEAP)
+        );
+
+        buttonInsertion.setOnAction(e ->
+                Pages.show(Pages.INSERTION)
+        );
+
+        buttonMerge.setOnAction(e ->
+                Pages.show(Pages.MERGE)
+        );
+
+        buttonQuick.setOnAction(e ->
+                Pages.show(Pages.QUICK)
+        );
+
+        buttonSelection.setOnAction(e ->
+                Pages.show(Pages.SELECTION)
+        );
+
         // root
         BorderPane root = new BorderPane();
         root.setTop(titleBox);
         root.setLeft(textBox);
-        root.setBottom(buttonBubble);
+        root.setBottom(buttons);
 
         return root;
     }
